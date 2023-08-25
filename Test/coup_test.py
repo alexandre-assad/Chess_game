@@ -1,6 +1,6 @@
 import unittest
 from coup import *
-
+from Materials.Cavalier import Cavalier
 class TestCoup(unittest.TestCase):
     
     def test_coup_str(self):
