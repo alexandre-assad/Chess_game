@@ -7,9 +7,11 @@ class Piece:
         self.point = 0
     
     
-    def possible_move(self) -> list:
+    def generate_moves(self) -> list:
         """
         Input : self
         Output : list de coups (list de [Objet pièce, position de départ, postion d'arrivée])
         """
         pass 
+
+    

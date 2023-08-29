@@ -1,6 +1,6 @@
 import unittest
 from Coup import Coup
-from Materials.Cavalier import Cavalier
+from Materials.Piece import Piece
 
 class TestCoup(unittest.TestCase):
     

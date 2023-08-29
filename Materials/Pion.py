@@ -7,3 +7,5 @@ class Pion(Piece):
         super().__init__(color,li,col)
         self.point = 1
         self.letter=""
+        
+    
