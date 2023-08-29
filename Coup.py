@@ -13,3 +13,5 @@ class Coup:
         
     def __str__(self):
         return f"{self.piece.letter}{letter_col(self.col_dep)}{self.li_dep} {letter_col(self.col_arr)}{self.li_arr}"
+
+

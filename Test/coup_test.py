@@ -1,8 +1,11 @@
 import unittest
 from Coup import Coup
-from Materials.Piece import Piece
+from Materials.Cavalier import Cavalier
+from Materials.Dame import Dame
 
 class TestCoup(unittest.TestCase):
     
     def test_coup_str(self):
-        self.assertEqual(print(Coup(Cavalier("b",4,7),3,6)),"CH4 F3")
+        C = Coup(Cavalier("b",4,8),3,6)
+        self.assertEqual(f"{C}",'CH4 F3')
+

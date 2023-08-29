@@ -3,6 +3,7 @@
         "-v",
         "-s",
         "./Test",
+        "./Test/Materials_test",
         "-p",
         "*_test.py"
     ],
