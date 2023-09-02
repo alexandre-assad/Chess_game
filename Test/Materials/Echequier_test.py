@@ -1,10 +1,10 @@
 import unittest
-
-
+from Materials.Echequier import Echequier
 class TestEchequier(unittest.TestCase):
     
     def test_setup(self):
-        pass
+        Echequier_1 = Echequier()
+        self.assertEqual(Echequier_1.board[4][4],"")
     
     
     def test_display(self):
