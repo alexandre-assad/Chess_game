@@ -1,5 +1,7 @@
 import unittest
+from Materials.Cavalier import Cavalier
 from Materials.Echequier import Echequier
+from Coup import Coup
 
 class TestEchequier(unittest.TestCase):
     
@@ -28,8 +30,10 @@ class TestEchequier(unittest.TestCase):
     
     
     def test_play_move(self):
-        pass
-    
+        Echequier_1 = Echequier()
+        Echequier_1.play_move(Coup(Echequier_1.board[0][1],3,3))
+        self.assertEqual(Echequier_1.board[0][1]," ")
+        self.assertEqual(Echequier_1.board[2][2].letter,"C")
     
     def test_promote_pion(self):
         pass

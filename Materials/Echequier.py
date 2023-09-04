@@ -4,6 +4,7 @@ from Materials.Tour import Tour
 from Materials.Fou import Fou
 from Materials.Roi import Roi
 from Materials.Pion import Pion
+from Coup import Coup
 
 class Echequier:
     
@@ -34,13 +35,16 @@ class Echequier:
                 board_array[i][j].color = "w"
         return board_array
     
-    def play_move(self,li_dep,col_dep,li_arr,col_arr):
+    def play_move(self,Coup):
         """
-        Input : coordinates of piece and coordinates of arrivals
+        Input : A Coup object
         Basic code : Change the content of self.board[1st coordiantes] to empty, and self.board[2nd coordinates] with the piece
         Output : the self.board actualised
         """
-        pass
+        self.board[Coup.li_dep-1][Coup.col_dep-1] = " "
+        self.board[Coup.li_arr-1][Coup.col_arr-1] = Coup.piece
+        Coup.piece.li,Coup.piece.col = Coup.li_arr,Coup.col_arr
+        
     
     
     def promote_pion(self):
