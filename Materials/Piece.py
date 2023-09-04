@@ -5,6 +5,7 @@ class Piece:
         self.li = li
         self.col = col
         self.point = 0
+        self.letter =""
     
     
     def generate_moves(self) -> list:
@@ -14,4 +15,6 @@ class Piece:
         """
         pass 
 
+    def __repr__(self):
+        return self.letter
     

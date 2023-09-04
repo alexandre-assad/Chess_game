@@ -56,7 +56,11 @@ class Echequier:
         Input : self
         Output : display the chess board in terminal
         """
-        pass
+        display_str = ""
+        for i in range(len(self.board)):
+            display_str += str(self.board[i])
+            display_str += "\n"
+        return display_str
         
     def evaluate(self):
         """
