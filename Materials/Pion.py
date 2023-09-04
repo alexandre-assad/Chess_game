@@ -1,4 +1,4 @@
-from Piece import Piece
+from Materials.Piece import Piece
 
 
 class Pion(Piece):
