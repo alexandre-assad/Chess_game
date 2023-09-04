@@ -56,10 +56,13 @@ class Echequier:
         Input : self
         Output : display the chess board in terminal
         """
-        display_str = ""
-        for i in range(len(self.board)):
-            display_str += str(self.board[i])
-            display_str += "\n"
+        display_str = "["
+        for i in range(8):
+            for j in range(7):
+                display_str += f"[{str(self.board[i][j])}],"
+            display_str += f"[{str(self.board[i][7])}]"
+            display_str += "],\n["
+        display_str = display_str[0:len(display_str)-3]
         return display_str
         
     def evaluate(self):
@@ -68,3 +71,4 @@ class Echequier:
         Output : a float, the evaluation of the position. It will be positive for a good white's position, and negative for a good black's position.
         """
         pass
+
