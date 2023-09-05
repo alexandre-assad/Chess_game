@@ -6,3 +6,26 @@ class Cavalier(Piece):
         super().__init__(color,li,col)
         self.point = 3
         self.letter = "C"
+
+
+    def generate_moves(self, echequier) -> list:
+        piece = echequier.board[self.li-1][self.col-1]
+        moves = []
+        pos = [self.li-1,self.col-1]
+        possible_distance = [-2,-1,1,2]
+        for i in possible_distance:
+            if abs(i) == 2:
+                if echequier.board[pos[0]+i][pos[1]+1] == " " or  echequier.board[pos[0]+i][pos[1]+1].color != piece.color:
+                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+1 <= 7:
+                        moves.append([self,pos[0]+i+1,pos[1]+1+1])
+                if echequier.board[pos[0]+i][pos[1]-1] == " " or  echequier.board[pos[0]+i][pos[1]-1].color != piece.color:
+                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-1 >= 0:
+                        moves.append([self,pos[0]+i+1,pos[1]-1+1])
+            else:
+                if echequier.board[pos[0]+i][pos[1]+2] == " " or  echequier.board[pos[0]+i][pos[1]+2].color != piece.color:
+                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+2 <= 7:
+                        moves.append([self,pos[0]+i+1,pos[1]+2+1])
+                if echequier.board[pos[0]+i][pos[1]-2] == " " or  echequier.board[pos[0]+i][pos[1]-2].color != piece.color:
+                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-2 >= 0:
+                        moves.append([self,pos[0]+i+1,pos[1]-2+1])
+        return moves
