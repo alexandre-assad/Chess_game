@@ -8,7 +8,7 @@ class Piece:
         self.letter =""
     
     
-    def generate_moves(self) -> list:
+    def generate_moves(self,echequier) -> list:
         """
         Input : self
         Output : list de coups (list de [Objet pièce, postion d'arrivée])
