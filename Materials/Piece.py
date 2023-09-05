@@ -11,7 +11,7 @@ class Piece:
     def generate_moves(self) -> list:
         """
         Input : self
-        Output : list de coups (list de [Objet pièce, position de départ, postion d'arrivée])
+        Output : list de coups (list de [Objet pièce, postion d'arrivée])
         """
         pass 
 
