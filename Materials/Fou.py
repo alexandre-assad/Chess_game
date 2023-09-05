@@ -23,7 +23,7 @@ class Fou(Piece):
                     moves.append([self,pos[0]+1+1,pos[1]+1+1])
                     pos = [pos[0]+1,pos[1]+1]
                 elif echequier.board[pos[0]+1][pos[1]+1] != " " and echequier.board[pos[0]+1][pos[1]+1].color != piece.color:
-                    moves.append([piece,pos[0]+1+1,pos[1]-1+1])
+                    moves.append([piece,pos[0]+1+1,pos[1]+1+1])
                     run = False
                 else:
                     run = False
@@ -51,7 +51,7 @@ class Fou(Piece):
                     moves.append([self,pos[0]-1+1,pos[1]-1+1])
                     pos = [pos[0]-1,pos[1]-1]
                 elif echequier.board[pos[0]-1][pos[1]-1] != " " and echequier.board[pos[0]-1][pos[1]-1].color != piece.color:
-                    moves.append([piece,pos[0]+1+1,pos[1]-1+1])
+                    moves.append([piece,pos[0]-1+1,pos[1]-1+1])
                     run = False
                 else:
                     run = False
@@ -65,7 +65,7 @@ class Fou(Piece):
                     moves.append([self,pos[0]-1+1,pos[1]+1+1])
                     pos = [pos[0]-1,pos[1]+1]
                 elif echequier.board[pos[0]-1][pos[1]+1] != " " and echequier.board[pos[0]-1][pos[1]+1].color != piece.color:
-                    moves.append([piece,pos[0]+1+1,pos[1]-1+1])
+                    moves.append([piece,pos[0]-1+1,pos[1]+1+1])
                     run = False
                 else:
                     run = False
