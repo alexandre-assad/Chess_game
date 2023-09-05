@@ -6,6 +6,7 @@ class Piece:
         self.col = col
         self.point = 0
         self.letter =""
+        self.is_defended = False
     
     
     def generate_moves(self,echequier) -> list:
