@@ -13,4 +13,5 @@ class TestTour(unittest.TestCase):
         Echequier_1.play_move(Coup(Piona2,4,1))
         self.assertEqual(Piona2.generate_moves(Echequier_1),[])
         Echequier_1.board[4][1] = Pion("b",5,2)
-        self.assertEqual(Piona2.generate_moves(Echequier_1),[Piona2,5,2])
+        self.assertEqual(Piona2.generate_moves(Echequier_1),[[Piona2,5,2]])
+        self.assertEqual(Echequier_1.board[6][4].generate_moves(Echequier_1),[[Echequier_1.board[6][4],6,5],[Echequier_1.board[6][4],5,5]])
