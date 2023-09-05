@@ -22,6 +22,9 @@ class Fou(Piece):
                 if echequier.board[pos[0]+1][pos[1]+1] == " ":
                     moves.append([self,pos[0]+1+1,pos[1]+1+1])
                     pos = [pos[0]+1,pos[1]+1]
+                elif echequier.board[pos[0]+1][pos[1]+1] != " " and echequier.board[pos[0]+1][pos[1]+1].color != piece.color:
+                    moves.append([piece,pos[0]+1+1,pos[1]-1+1])
+                    run = False
                 else:
                     run = False
             else:
@@ -33,7 +36,7 @@ class Fou(Piece):
                 if echequier.board[pos[0]+1][pos[1]-1] == " ":
                     moves.append([piece,pos[0]+1+1,pos[1]-1+1])
                     pos = [pos[0]+1,pos[1]-1]
-                elif echequier.board[pos[0]+1][pos[1]-1] != " " and echequier.board[pos[0]+1][pos[1]-1].letter != piece.letter:
+                elif echequier.board[pos[0]+1][pos[1]-1] != " " and echequier.board[pos[0]+1][pos[1]-1].color != piece.color:
                     moves.append([piece,pos[0]+1+1,pos[1]-1+1])
                     run = False
                 else:
@@ -47,7 +50,7 @@ class Fou(Piece):
                 if echequier.board[pos[0]-1][pos[1]-1] == " ":
                     moves.append([self,pos[0]-1+1,pos[1]-1+1])
                     pos = [pos[0]-1,pos[1]-1]
-                elif echequier.board[pos[0]-1][pos[1]-1] != " " and echequier.board[pos[0]-1][pos[1]-1].letter != piece.letter:
+                elif echequier.board[pos[0]-1][pos[1]-1] != " " and echequier.board[pos[0]-1][pos[1]-1].color != piece.color:
                     moves.append([piece,pos[0]+1+1,pos[1]-1+1])
                     run = False
                 else:
@@ -61,7 +64,7 @@ class Fou(Piece):
                 if echequier.board[pos[0]-1][pos[1]+1] == " ":
                     moves.append([self,pos[0]-1+1,pos[1]+1+1])
                     pos = [pos[0]-1,pos[1]+1]
-                elif echequier.board[pos[0]-1][pos[1]+1] != " " and echequier.board[pos[0]-1][pos[1]+1].letter != piece.letter:
+                elif echequier.board[pos[0]-1][pos[1]+1] != " " and echequier.board[pos[0]-1][pos[1]+1].color != piece.color:
                     moves.append([piece,pos[0]+1+1,pos[1]-1+1])
                     run = False
                 else:
