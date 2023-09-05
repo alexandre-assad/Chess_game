@@ -7,7 +7,7 @@ class Pion(Piece):
         super().__init__(color,li,col)
         self.point = 1
         self.letter="P"
-        self.en_passant = []
+        self.en_passant = [] #Must be an array like [3,2] to go .board[2][1]
     
     def generate_moves(self, echequier) -> list:
         piece = echequier.board[self.li-1][self.col-1]

@@ -3,7 +3,7 @@ from Materials.Echequier import Echequier
 from Materials.Pion import Pion
 from Coup import Coup
 
-class TestTour(unittest.TestCase):
+class TestPion(unittest.TestCase):
 
     def test_generate_moves(self):
         Echequier_1 = Echequier()
