@@ -7,7 +7,7 @@ class Pion(Piece):
         super().__init__(color,li,col)
         self.point = 1
         self.letter="P"
-        
+        self.en_passant = []
     
     def generate_moves(self, echequier) -> list:
         piece = echequier.board[self.li-1][self.col-1]
@@ -25,10 +25,11 @@ class Pion(Piece):
                 if echequier.board[pos[0]+distance][pos[1]] == " ":
                         moves.append([self,pos[0]+distance+1,pos[1]+1])
                         pos = [pos[0]+distance,pos[1]]
-                elif echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
+                if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
                     moves.append([self,pos[0]+distance+1,pos[1]+1+1])
-                elif echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
+                if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
                     moves.append([self,pos[0]+distance+1,pos[1]-1+1])
+                
         else:
             distance = -1
             if pos[0] == 6:
@@ -41,8 +42,11 @@ class Pion(Piece):
                 if echequier.board[pos[0]+distance][pos[1]] == " ":
                         moves.append([self,pos[0]+distance+1,pos[1]+1])
                         pos = [pos[0]+distance,pos[1]]
-                elif echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
+                if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
                     moves.append([self,pos[0]+distance+1,pos[1]+1+1])
-                elif echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
+                if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
                     moves.append([self,pos[0]+distance+1,pos[1]-1+1])
+        if self.en_passant != []:
+            moves.append([self,self.en_passant[0],self.en_passant[1]])
+        self.en_passant = []
         return moves
