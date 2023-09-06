@@ -24,11 +24,10 @@ class Pion(Piece):
             else:
                 if echequier.board[pos[0]+distance][pos[1]] == " ":
                         moves.append([self,pos[0]+distance+1,pos[1]+1])
-                        pos = [pos[0]+distance,pos[1]]
-                if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
-                    moves.append([self,pos[0]+distance+1,pos[1]+1+1])
-                if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
-                    moves.append([self,pos[0]+distance+1,pos[1]-1+1])
+            if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
+                moves.append([self,pos[0]+distance+1,pos[1]+1+1])
+            if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
+                moves.append([self,pos[0]+distance+1,pos[1]-1+1])
                 
         else:
             distance = -1
@@ -42,10 +41,10 @@ class Pion(Piece):
                 if echequier.board[pos[0]+distance][pos[1]] == " ":
                         moves.append([self,pos[0]+distance+1,pos[1]+1])
                         pos = [pos[0]+distance,pos[1]]
-                if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].letter == "P" and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
-                    moves.append([self,pos[0]+distance+1,pos[1]+1+1])
-                if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].letter == "P" and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
-                    moves.append([self,pos[0]+distance+1,pos[1]-1+1])
+            if echequier.board[pos[0]+distance][pos[1]+1] != " " and echequier.board[pos[0]+distance][pos[1]+1].color != piece.color:
+                moves.append([self,pos[0]+distance+1,pos[1]+1+1])
+            if echequier.board[pos[0]+distance][pos[1]-1] != " " and echequier.board[pos[0]+distance][pos[1]-1].color != piece.color:
+                moves.append([self,pos[0]+distance+1,pos[1]-1+1])
         if self.en_passant != []:
             moves.append([self,self.en_passant[0],self.en_passant[1]])
         self.en_passant = []
