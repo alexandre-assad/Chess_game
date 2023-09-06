@@ -19,3 +19,8 @@ class TestPion(unittest.TestCase):
         Echequier_1.play_move(Coup(Piona2,2,1))
         Piona2.en_passant = [3,2]
         self.assertEqual(Piona2.generate_moves(Echequier_1),[[Piona2,3,1],[Piona2,4,1],[Piona2,3,2]])
+        Echequier_1.setup()
+        Pione4 = Echequier_1.board[1][4]
+        Echequier_1.play_move(Coup(Pione4,4,5))
+        Echequier_1.board[4][4] = Pion("b",5,4)
+        self.assertEqual(Pione4.generate_moves(Echequier_1),[[Pione4,5,4],[Pione4,5,5]])

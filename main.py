@@ -12,7 +12,7 @@ def main():
             col = int(input("Rentrer la colonne de la piece que vous voulez !"))
             pos = [li,col]
             if Echequier_1.pointer(pos,"w"):
-                print(Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves())
+                print(Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves(Echequier_1))
                 li_arr = int(input("Rentrer la ligne d'arrivée que vous voulez !"))
                 col_arr = int(input("Rentrer la colonne d'arrivée que vous voulez !"))
                 try:
@@ -25,7 +25,7 @@ def main():
             col = int(input("Rentrer la colonne de la piece que vous voulez !"))
             pos = [li,col]
             if Echequier_1.pointer(pos,"b"):
-                print(Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves())
+                print(Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves(Echequier_1))
                 li_arr = int(input("Rentrer la ligne d'arrivée que vous voulez !"))
                 col_arr = int(input("Rentrer la colonne d'arrivée que vous voulez !"))
                 try:
