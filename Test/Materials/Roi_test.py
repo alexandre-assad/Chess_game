@@ -14,3 +14,6 @@ class TestRoi(unittest.TestCase):
         PionDef.is_defended=True
         Echequier_1.board[3][4] = PionDef
         self.assertEqual(Roiblanc.generate_moves(Echequier_1),[[Roiblanc,3,4],[Roiblanc,3,6],[Roiblanc,4,4],[Roiblanc,4,6]])
+        Echequier_1.setup()
+        Echequier_1.board[0][5], Echequier_1.board[0][6] = " ", " "
+        self.assertEqual(Roiblanc.generate_moves(Echequier_1),[[Roiblanc,1,7]])
