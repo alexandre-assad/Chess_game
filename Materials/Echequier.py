@@ -61,7 +61,7 @@ class Echequier:
         Output : display the chess board in terminal
         """
         display_str = "["
-        for i in range(8):
+        for i in range(7,-1,-1):
             for j in range(7):
                 display_str += f"[{str(self.board[i][j])}],"
             display_str += f"[{str(self.board[i][7])}]"
