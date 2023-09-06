@@ -15,17 +15,20 @@ class Cavalier(Piece):
         possible_distance = [-2,-1,1,2]
         for i in possible_distance:
             if abs(i) == 2:
-                if echequier.board[pos[0]+i][pos[1]+1] == " " or  echequier.board[pos[0]+i][pos[1]+1].color != piece.color:
-                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+1 <= 7:
+                if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+1 <= 7:
+                    if echequier.board[pos[0]+i][pos[1]+1] == " " or  echequier.board[pos[0]+i][pos[1]+1].color != piece.color:
                         moves.append([self,pos[0]+i+1,pos[1]+1+1])
-                if echequier.board[pos[0]+i][pos[1]-1] == " " or  echequier.board[pos[0]+i][pos[1]-1].color != piece.color:
-                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-1 >= 0:
+                if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-1 >= 0:
+                    if echequier.board[pos[0]+i][pos[1]-1] == " " or  echequier.board[pos[0]+i][pos[1]-1].color != piece.color:
+                    
                         moves.append([self,pos[0]+i+1,pos[1]-1+1])
             else:
-                if echequier.board[pos[0]+i][pos[1]+2] == " " or  echequier.board[pos[0]+i][pos[1]+2].color != piece.color:
-                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+2 <= 7:
+                if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]+2 <= 7:
+                    if echequier.board[pos[0]+i][pos[1]+2] == " " or  echequier.board[pos[0]+i][pos[1]+2].color != piece.color:
+                    
                         moves.append([self,pos[0]+i+1,pos[1]+2+1])
-                if echequier.board[pos[0]+i][pos[1]-2] == " " or  echequier.board[pos[0]+i][pos[1]-2].color != piece.color:
-                    if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-2 >= 0:
+                if pos[0] +i <= 7 and pos[0] + i >= 0 and pos[1]-2 >= 0:
+                    if echequier.board[pos[0]+i][pos[1]-2] == " " or  echequier.board[pos[0]+i][pos[1]-2].color != piece.color:
+                    
                         moves.append([self,pos[0]+i+1,pos[1]-2+1])
         return moves
