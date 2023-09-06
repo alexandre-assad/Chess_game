@@ -37,3 +37,10 @@ class TestEchequier(unittest.TestCase):
     
     def test_promote_pion(self):
         pass
+
+
+    def test_pointer(self):
+        Echequier_1 = Echequier()
+        self.assertEqual(Echequier_1.pointer([1,1],"w"),True)
+        self.assertNotEqual(Echequier_1.pointer([4,1],"w"),True)
+        self.assertEqual(Echequier_1.pointer([8,4],"b"),True)
