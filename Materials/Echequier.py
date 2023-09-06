@@ -76,3 +76,6 @@ class Echequier:
         """
         pass
 
+
+    def pointer(self,pos:list,color:str) -> bool:
+        return self.board[pos[0]-1][pos[1]-1] != " " and self.board[pos[0]-1][pos[1]-1].color == color
