@@ -16,8 +16,11 @@ def main():
                 li_arr = int(input("Rentrer la ligne d'arrivée que vous voulez !"))
                 col_arr = int(input("Rentrer la colonne d'arrivée que vous voulez !"))
                 try:
-                    Echequier_1.play_move(Coup((Echequier_1.board[pos[0]-1][pos[1]-1]),li_arr,col_arr))
-                    player = "ia"
+                    if [Echequier_1.board[pos[0]-1][pos[1]-1],li_arr,col_arr] in Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves(Echequier_1): 
+                        Echequier_1.play_move(Coup((Echequier_1.board[pos[0]-1][pos[1]-1]),li_arr,col_arr))
+                        player = "ia"
+                    else:
+                        print("Coup invalide")
                 except:
                     print("erreur lors du chargement du coup")
         elif player == "ia":
@@ -29,8 +32,11 @@ def main():
                 li_arr = int(input("Rentrer la ligne d'arrivée que vous voulez !"))
                 col_arr = int(input("Rentrer la colonne d'arrivée que vous voulez !"))
                 try:
-                    Echequier_1.play_move(Coup((Echequier_1.board[pos[0]-1][pos[1]-1]),li_arr,col_arr))
-                    player = "player"
+                    if [Echequier_1.board[pos[0]-1][pos[1]-1],li_arr,col_arr] in Echequier_1.board[pos[0]-1][pos[1]-1].generate_moves(Echequier_1):
+                        Echequier_1.play_move(Coup((Echequier_1.board[pos[0]-1][pos[1]-1]),li_arr,col_arr))
+                        player = "player"
+                    else:
+                        print("Coup invalide")
                 except:
                     print("erreur lors du chargement du coup")
 
