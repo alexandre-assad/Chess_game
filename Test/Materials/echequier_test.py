@@ -1,6 +1,7 @@
 import unittest
 from Materials.Cavalier import Cavalier
 from Materials.Echequier import Echequier
+from Materials.Empty import Empty
 from Coup import Coup
 
 class TestEchequier(unittest.TestCase):
@@ -44,3 +45,10 @@ class TestEchequier(unittest.TestCase):
         self.assertEqual(Echequier_1.pointer([1,1],"w"),True)
         self.assertNotEqual(Echequier_1.pointer([4,1],"w"),True)
         self.assertEqual(Echequier_1.pointer([8,4],"b"),True)
+
+    
+    def test_set_attack(self):
+        Echequier_1 = Echequier()
+        Echequier_1[1][0] = Empty(2,1)
+        Echequier_1.set_attack()
+        self.assertEqual(Echequier_1[0][0].is_attacked,True)
