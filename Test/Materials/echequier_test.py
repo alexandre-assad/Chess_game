@@ -51,4 +51,4 @@ class TestEchequier(unittest.TestCase):
         Echequier_1 = Echequier()
         Echequier_1.board[6][0] = Empty(7,1)
         Echequier_1.set_attack()
-        self.assertEqual(Echequier_1.board[1][0].is_attacked,True)
+        self.assertEqual(Echequier_1.board[1][0].is_attacked,["b"])

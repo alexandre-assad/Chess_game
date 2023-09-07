@@ -24,6 +24,7 @@ class Roi(Piece):
         return moves
     
     def rock_possible(self,echequier) -> bool :
+        #Need to rewrite with black side 
         rock_moves = []
         #Small rock
         if echequier.board[0][5].letter == " " and echequier.board[0][5].is_attacked == False and echequier.board[0][6].letter == " " and echequier.board[0][6].is_attacked == False and self.has_moved == False and echequier.board[0][7].has_moved == False:

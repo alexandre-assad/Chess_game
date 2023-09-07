@@ -7,7 +7,7 @@ class Piece:
         self.point = 0
         self.letter =""
         self.is_defended = False
-        self.is_attacked = False
+        self.is_attacked = []
     
     def generate_moves(self,echequier) -> list:
         """

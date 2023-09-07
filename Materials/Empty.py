@@ -5,8 +5,8 @@ class Empty:
         self.col = col
         self.letter = " "
         self.color =""
-        self.is_attacked = False
-        self.is_defended = False
+        self.is_attacked = []
+
 
     def __repr__(self):
         return self.letter

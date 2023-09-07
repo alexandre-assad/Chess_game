@@ -89,5 +89,8 @@ class Echequier:
                 if self.board[li][col].letter != " ":
 
                     if  self.board[li][col].generate_moves(self) != []:
+                        
                         for move in self.board[li][col].generate_moves(self):
-                            self.board[move[1]-1][move[2]-1].is_attacked = True
+
+                            if self.board[li][col].color not in self.board[move[1]-1][move[2]-1].is_attacked:
+                                self.board[move[1]-1][move[2]-1].is_attacked.append(self.board[li][col].color)
