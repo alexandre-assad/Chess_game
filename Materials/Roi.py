@@ -14,8 +14,8 @@ class Roi(Piece):
         for i in range(-1,2,1):
             for j in range(-1,2,1):
                 if pos[0]+i <= 7 and pos[0]+i >= 0 and pos[1]+j <= 7 and pos[1]+j >= 0:
-                    if echequier.board[pos[0]+i][pos[1]+j] == " ":
+                    if echequier.board[pos[0]+i][pos[1]+j].letter == " ":
                         moves.append([piece,pos[0]+i+1,pos[1]+j+1])
-                    elif echequier.board[pos[0]+i][pos[1]+j] != " " and echequier.board[pos[0]+i][pos[1]+j].color != piece.color and echequier.board[pos[0]+i][pos[1]+j].is_defended == False:
+                    elif echequier.board[pos[0]+i][pos[1]+j].letter != " " and echequier.board[pos[0]+i][pos[1]+j].color != piece.color and echequier.board[pos[0]+i][pos[1]+j].is_defended == False:
                         moves.append([piece,pos[0]+i+1,pos[1]+j+1])
         return moves
