@@ -4,6 +4,7 @@ class Empty:
         self.li = li
         self.col = col
         self.letter = " "
+        self.color =""
         self.is_attacked = False
         self.is_defended = False
 
