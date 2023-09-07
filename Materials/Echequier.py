@@ -80,3 +80,14 @@ class Echequier:
 
     def pointer(self,pos:list,color:str) -> bool:
         return self.board[pos[0]-1][pos[1]-1].letter != " " and self.board[pos[0]-1][pos[1]-1].color == color
+    
+    def set_attack(self):
+
+        for li in range(8):
+            for col in range(8):
+
+                if self.board[li][col].letter != " ":
+
+                    if  self.board[li][col].generate_moves(self) != []:
+                        for move in self.board[li][col].generate_moves(self):
+                            self.board[move[1]-1][move[2]-1].is_attacked = True
