@@ -42,8 +42,7 @@ class Echequier:
         Basic code : Change the content of self.board[1st coordiantes] to empty, and self.board[2nd coordinates] with the piece
         Output : the self.board actualised
         """
-        self.board[Coup.li_dep-1][Coup.col_dep-1] = self.board[Coup.li_arr-1][Coup.col_arr-1]
-        self.board[Coup.li_dep-1][Coup.col_dep-1].li, self.board[Coup.li_dep-1][Coup.col_dep-1].col = Coup.li_dep,Coup.col_dep
+        self.board[Coup.li_dep-1][Coup.col_dep-1] = Empty(Coup.li_dep,Coup.col_dep)
         self.board[Coup.li_arr-1][Coup.col_arr-1] = Coup.piece
         Coup.piece.li,Coup.piece.col = Coup.li_arr,Coup.col_arr
         
