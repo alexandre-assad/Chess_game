@@ -16,8 +16,9 @@ class TestRoi(unittest.TestCase):
         Echequier_1.board[3][4] = PionDef
         self.assertEqual(Roiblanc.generate_moves(Echequier_1),[[Roiblanc,3,4],[Roiblanc,3,6],[Roiblanc,4,4],[Roiblanc,4,6]])
         Echequier_2 = Echequier()
+        Roiblanc = Echequier_2.board[0][4]
         Echequier_2.board[0][5], Echequier_2.board[0][6] = Empty(1,6), Empty(1,7)
-        self.assertEqual(Roiblanc.generate_moves(Echequier_2),[[Roiblanc,1,7]])
+        self.assertEqual(Roiblanc.generate_moves(Echequier_2),[[Roiblanc,1,6],[Roiblanc,1,7]])
     
 
     def test_rock_possible(self):
