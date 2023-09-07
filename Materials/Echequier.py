@@ -4,6 +4,7 @@ from Materials.Tour import Tour
 from Materials.Fou import Fou
 from Materials.Roi import Roi
 from Materials.Pion import Pion
+from Materials.Empty import Empty
 from Coup import Coup
 
 class Echequier:
@@ -27,7 +28,7 @@ class Echequier:
                 line_board = [Pion("b",line+1,i+1) for i in range(8)]
                 board_array.append(line_board)
             else:
-                line_board = [" " for i in range(8)]
+                line_board = [Empty(line+1,i+1) for i in range(8)]
                 board_array.append(line_board)
         #Change color
         for i in range(2):
@@ -41,7 +42,8 @@ class Echequier:
         Basic code : Change the content of self.board[1st coordiantes] to empty, and self.board[2nd coordinates] with the piece
         Output : the self.board actualised
         """
-        self.board[Coup.li_dep-1][Coup.col_dep-1] = " "
+        self.board[Coup.li_dep-1][Coup.col_dep-1] = self.board[Coup.li_arr-1][Coup.col_arr-1]
+        self.board[Coup.li_dep-1][Coup.col_dep-1].li, self.board[Coup.li_dep-1][Coup.col_dep-1].col = Coup.li_dep,Coup.col_dep
         self.board[Coup.li_arr-1][Coup.col_arr-1] = Coup.piece
         Coup.piece.li,Coup.piece.col = Coup.li_arr,Coup.col_arr
         
@@ -78,4 +80,4 @@ class Echequier:
 
 
     def pointer(self,pos:list,color:str) -> bool:
-        return self.board[pos[0]-1][pos[1]-1] != " " and self.board[pos[0]-1][pos[1]-1].color == color
+        return self.board[pos[0]-1][pos[1]-1].letter != " " and self.board[pos[0]-1][pos[1]-1].color == color

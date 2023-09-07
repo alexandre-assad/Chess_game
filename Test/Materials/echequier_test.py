@@ -7,7 +7,7 @@ class TestEchequier(unittest.TestCase):
     
     def test_setup(self):
         Echequier_1 = Echequier()
-        self.assertEqual(Echequier_1.board[4][4]," ")
+        self.assertEqual(Echequier_1.board[4][4].letter," ")
         self.assertEqual(Echequier_1.board[1][2].color,"w")
         self.assertEqual(Echequier_1.board[7][2].color,"b")
     
@@ -32,7 +32,7 @@ class TestEchequier(unittest.TestCase):
     def test_play_move(self):
         Echequier_1 = Echequier()
         Echequier_1.play_move(Coup(Echequier_1.board[0][1],3,3))
-        self.assertEqual(Echequier_1.board[0][1]," ")
+        self.assertEqual(Echequier_1.board[0][1].letter," ")
         self.assertEqual(Echequier_1.board[2][2].letter,"C")
     
     def test_promote_pion(self):
