@@ -18,10 +18,10 @@ class Tour(Piece):
         pos = [self.li-1,self.col-1]
         while run:
             if pos[0] != 7:
-                if echequier.board[pos[0]+1][pos[1]] == " ":
+                if echequier.board[pos[0]+1][pos[1]].letter == " ":
                     moves.append([self,pos[0]+1+1,pos[1]+1])
                     pos = [pos[0]+1,pos[1]]
-                elif echequier.board[pos[0]+1][pos[1]] != " " and echequier.board[pos[0]+1][pos[1]].color != piece.color:
+                elif echequier.board[pos[0]+1][pos[1]].letter != " " and echequier.board[pos[0]+1][pos[1]].color != piece.color:
                     moves.append([piece,pos[0]+1+1,pos[1]+1])
                     run = False
                 else:
@@ -32,10 +32,10 @@ class Tour(Piece):
         pos = [self.li-1,self.col-1]
         while run:
             if pos[0] != 0:
-                if echequier.board[pos[0]-1][pos[1]] == " ":
+                if echequier.board[pos[0]-1][pos[1]].letter == " ":
                     moves.append([self,pos[0]-1+1,pos[1]+1])
                     pos = [pos[0]-1,pos[1]]
-                elif echequier.board[pos[0]-1][pos[1]] != " " and echequier.board[pos[0]-1][pos[1]].color != piece.color:
+                elif echequier.board[pos[0]-1][pos[1]].letter != " " and echequier.board[pos[0]-1][pos[1]].color != piece.color:
                     moves.append([piece,pos[0]-1+1,pos[1]+1])
                     run = False
                 else:
@@ -46,10 +46,10 @@ class Tour(Piece):
         pos = [self.li-1,self.col-1]
         while run:
             if pos[1] != 0:
-                if echequier.board[pos[0]][pos[1]-1] == " ":
+                if echequier.board[pos[0]][pos[1]-1].letter == " ":
                     moves.append([self,pos[0]+1,pos[1]-1+1])
                     pos = [pos[0],pos[1]-1]
-                elif echequier.board[pos[0]][pos[1]-1] != " " and echequier.board[pos[0]][pos[1]-1].color != piece.color:
+                elif echequier.board[pos[0]][pos[1]-1].letter != " " and echequier.board[pos[0]][pos[1]-1].color != piece.color:
                     moves.append([piece,pos[0]+1,pos[1]-1+1])
                     run = False
                 else:
@@ -60,10 +60,10 @@ class Tour(Piece):
         pos = [self.li-1,self.col-1]
         while run:
             if pos[1] != 7:
-                if echequier.board[pos[0]][pos[1]+1] == " ":
+                if echequier.board[pos[0]][pos[1]+1].letter == " ":
                     moves.append([self,pos[0]+1,pos[1]+1+1])
                     pos = [pos[0],pos[1]+1]
-                elif echequier.board[pos[0]][pos[1]+1] != " " and echequier.board[pos[0]][pos[1]+1].color != piece.color:
+                elif echequier.board[pos[0]][pos[1]+1].letter != " " and echequier.board[pos[0]][pos[1]+1].color != piece.color:
                     moves.append([piece,pos[0]+1,pos[1]+1+1])
                     run = False
                 else:
