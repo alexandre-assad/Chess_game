@@ -6,6 +6,7 @@ class Roi(Piece):
         super().__init__(color,li,col)
         self.point = 999
         self.letter= "R"
+        self.has_moved = False
     
     def generate_moves(self, echequier) -> list:
         piece = echequier.board[self.li-1][self.col-1]
@@ -18,4 +19,8 @@ class Roi(Piece):
                         moves.append([piece,pos[0]+i+1,pos[1]+j+1])
                     elif echequier.board[pos[0]+i][pos[1]+j].letter != " " and echequier.board[pos[0]+i][pos[1]+j].color != piece.color and echequier.board[pos[0]+i][pos[1]+j].is_defended == False:
                         moves.append([piece,pos[0]+i+1,pos[1]+j+1])
+        moves.append(self.rock_possible(echequier))
         return moves
+    
+    def rock_possible(self,echequier) -> bool :
+        pass
