@@ -15,16 +15,16 @@ class TestRoi(unittest.TestCase):
         PionDef.is_defended=True
         Echequier_1.board[3][4] = PionDef
         self.assertEqual(Roiblanc.generate_moves(Echequier_1),[[Roiblanc,3,4],[Roiblanc,3,6],[Roiblanc,4,4],[Roiblanc,4,6]])
-        Echequier_1.setup()
-        # Echequier_1.board[0][5], Echequier_1.board[0][6] = Empty(1,6), Empty(1,7)
-        # self.assertEqual(Roiblanc.generate_moves(Echequier_1),[[Roiblanc,1,7]])
+        Echequier_2 = Echequier()
+        Echequier_2.board[0][5], Echequier_2.board[0][6] = Empty(1,6), Empty(1,7)
+        self.assertEqual(Roiblanc.generate_moves(Echequier_2),[[Roiblanc,1,7]])
     
 
     def test_rock_possible(self):
         Echequier_1 = Echequier()
         Roiblanc = Echequier_1.board[0][4]
-        self.assertEqual(Roiblanc.rock_possible(Echequier_1),False)
+        self.assertEqual(Roiblanc.rock_possible(Echequier_1),[])
         Echequier_1.board[0][5], Echequier_1.board[0][6] = Empty(1,6), Empty(1,7)
-        self.assertEqual(Roiblanc.rock_possible(Echequier_1),True)
+        self.assertEqual(Roiblanc.rock_possible(Echequier_1),[[Roiblanc,1,7]])
         Echequier_1.board[0][5].is_attacked = True
-        self.assertEqual(Roiblanc.rock_possible(Echequier_1),False)
+        self.assertEqual(Roiblanc.rock_possible(Echequier_1),[])

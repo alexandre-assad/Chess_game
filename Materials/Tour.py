@@ -6,6 +6,7 @@ class Tour(Piece):
         super().__init__(color,li,col)
         self.point = 5
         self.letter = "T"
+        self.has_moved = False
         
     def generate_moves(self,echequier) -> list:
         """
