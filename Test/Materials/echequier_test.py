@@ -11,6 +11,7 @@ class TestEchequier(unittest.TestCase):
         self.assertEqual(Echequier_1.board[4][4].letter," ")
         self.assertEqual(Echequier_1.board[1][2].color,"w")
         self.assertEqual(Echequier_1.board[7][2].color,"b")
+        self.assertEqual(Echequier_1.board[0][0].is_attacked,[])
     
     def test_display(self):
         Echequier_1 = Echequier()

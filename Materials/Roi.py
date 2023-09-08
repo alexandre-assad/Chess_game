@@ -27,8 +27,14 @@ class Roi(Piece):
         #Need to rewrite with black side 
         rock_moves = []
         #Small rock
-        if echequier.board[0][5].letter == " " and echequier.board[0][5].is_attacked == False and echequier.board[0][6].letter == " " and echequier.board[0][6].is_attacked == False and self.has_moved == False and echequier.board[0][7].has_moved == False:
-            rock_moves.append([self,self.li,self.col+2])
-        if echequier.board[0][3].letter == " " and echequier.board[0][3].is_attacked == False and echequier.board[0][2].letter == " " and echequier.board[0][2].is_attacked == False and echequier.board[0][1].letter == " " and self.has_moved == False and echequier.board[0][0].has_moved== False:
-            rock_moves.append([self,self.li,self.col-2])
+        if self.color == "w":
+            if echequier.board[0][5].letter == " " and  "b" not in echequier.board[0][5].is_attacked and echequier.board[0][6].letter == " " and "b" not in echequier.board[0][6].is_attacked and self.has_moved == False and echequier.board[0][7].has_moved == False:
+                rock_moves.append([self,self.li,self.col+2])
+            if echequier.board[0][3].letter == " " and "b" not in echequier.board[0][3].is_attacked and echequier.board[0][2].letter == " " and "b" not in echequier.board[0][2].is_attacked and echequier.board[0][1].letter == " " and self.has_moved == False and echequier.board[0][0].has_moved== False:
+                rock_moves.append([self,self.li,self.col-2])
+        else :
+            if echequier.board[7][5].letter == " " and "w" not in echequier.board[7][5].is_attacked and echequier.board[7][6].letter == " " and "w" not in echequier.board[7][6].is_attacked and self.has_moved == False and echequier.board[7][7].has_moved == False:
+                rock_moves.append([self,self.li,self.col+2])
+            if echequier.board[7][3].letter == " " and "w" not in echequier.board[7][3].is_attacked and echequier.board[7][2].letter == " " and "w" not in echequier.board[7][2].is_attacked and echequier.board[7][1].letter == " " and self.has_moved == False and echequier.board[7][0].has_moved== False:
+                rock_moves.append([self,self.li,self.col-2])
         return rock_moves

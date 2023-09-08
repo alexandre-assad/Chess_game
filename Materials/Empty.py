@@ -5,7 +5,7 @@ class Empty:
         self.col = col
         self.letter = " "
         self.color =""
-        self.is_attacked = []
+        self.is_attacked :list = []
 
 
     def __repr__(self):

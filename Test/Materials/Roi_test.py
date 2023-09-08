@@ -24,8 +24,11 @@ class TestRoi(unittest.TestCase):
     def test_rock_possible(self):
         Echequier_1 = Echequier()
         Roiblanc = Echequier_1.board[0][4]
-        self.assertEqual(Roiblanc.rock_possible(Echequier_1),[])
         Echequier_1.board[0][5], Echequier_1.board[0][6] = Empty(1,6), Empty(1,7)
+        self.assertEqual("b" not in Echequier_1.board[0][5].is_attacked,True)
         self.assertEqual(Roiblanc.rock_possible(Echequier_1),[[Roiblanc,1,7]])
-        Echequier_1.board[0][5].is_attacked = True
+        Echequier_1.board[0][5].is_attacked = ["b"]
         self.assertEqual(Roiblanc.rock_possible(Echequier_1),[])
+        Roinoir = Echequier_1.board[7][4]
+        Echequier_1.board[7][1], Echequier_1.board[7][2],Echequier_1.board[7][3] =Empty(8,2), Empty(8,3),Empty(8,4)
+        self.assertEqual(Roinoir.rock_possible(Echequier_1),[[Roinoir,8,3]])

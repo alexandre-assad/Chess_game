@@ -1,13 +1,13 @@
 class Piece:
     
     def __init__(self,color:str,li:int,col:int):
-        self.color = color
+        self.color  = color
         self.li = li
         self.col = col
         self.point = 0
         self.letter =""
         self.is_defended = False
-        self.is_attacked = []
+        self.is_attacked :list = [] 
     
     def generate_moves(self,echequier) -> list:
         """
