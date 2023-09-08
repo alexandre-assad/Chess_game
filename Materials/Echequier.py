@@ -86,8 +86,19 @@ class Echequier:
 
 
     def pointer(self,pos:list,color:str) -> bool:
-        return self.board[pos[0]-1][pos[1]-1].letter != " " and self.board[pos[0]-1][pos[1]-1].color == color
-    
+        if "b" in self.is_checked:
+            if self.board[pos[0]-1][pos[1]-1].letter != "R" or self.board[pos[0]-1][pos[1]-1].color != "b":
+                return False
+            else:
+                return True
+        elif "w" in self.is_checked:
+            if self.board[pos[0]-1][pos[1]-1].letter != "R" or self.board[pos[0]-1][pos[1]-1].color != "w":
+                return False
+            else:
+                return True
+        else:
+            return self.board[pos[0]-1][pos[1]-1].letter != " " and self.board[pos[0]-1][pos[1]-1].color == color
+
     def set_attack(self):
 
         for li in range(8):
