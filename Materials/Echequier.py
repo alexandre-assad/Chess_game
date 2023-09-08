@@ -45,6 +45,13 @@ class Echequier:
         self.board[Coup.li_dep-1][Coup.col_dep-1] = Empty(Coup.li_dep,Coup.col_dep)
         self.board[Coup.li_arr-1][Coup.col_arr-1] = Coup.piece
         Coup.piece.li,Coup.piece.col = Coup.li_arr,Coup.col_arr
+        if Coup.piece.letter == "R" and abs(Coup.col_arr - Coup.col_dep) == 2:
+            if Coup.col_arr == 3:
+                self.board[Coup.li_arr-1][3],self.board[Coup.li_arr-1][0] = self.board[Coup.li_arr-1][0],Empty(Coup.li_arr,1)
+                self.board[Coup.li_arr-1][3].col = 4
+            else:
+                self.board[Coup.li_arr-1][5],self.board[Coup.li_arr-1][7] = self.board[Coup.li_arr-1][7],Empty(Coup.li_arr,8)
+                self.board[Coup.li_arr-1][5].col = 6
         
     
     
